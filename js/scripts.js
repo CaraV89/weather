@@ -19,6 +19,15 @@ $('section').sidr({
 	speed:500
 });
 
+navigator.geolocation.getCurrentPosition(function(position){
+	var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+	var latAndLong = latitude + ',' + longitude; 
+  console.log(latAndLong);
+	return latAndLong;
+});
+
+
 // Get and store Geo Location lat/long coordinates
 if ('geolocation' in navigator) {
 
@@ -62,6 +71,8 @@ $('.geo').click( function() {
    
 });
 
+
+
 // Show geolocated weather
 var getWeather = function(location) {
     
@@ -71,11 +82,11 @@ var getWeather = function(location) {
     success: function(weather) {
       
       // Display Data
-	  $('#currentLocation .currently').text(weather.currently);
+        $('#currentLocation .currently').text(weather.currently);
       $('#currentLocation .temp').text(weather.temp);
       $('#currentLocation .city').text(weather.city);
       $('#currentLocation img').attr('src', weather.image);
-	  $('#currentLocation .today').text(weather.forecast[0].day + ', ' + weather.forecast[0].date);
+	   $('#currentLocation .today').text(weather.forecast[0].day + ', ' + weather.forecast[0].date);
 	
 		// Display Data : Day 1
     $('#currentLocation figure:nth-child(1) .low').text(weather.forecast[0].low);
@@ -107,7 +118,7 @@ var getWeather = function(location) {
     $('#currentLocation figure:nth-child(5) img').attr('src', weather.forecast[4].image);
 
 		// Change Icon w/ Condition code
-      var currentLocationIconCode = 'icon-' + weather.code;
+    var currentLocationIconCode = 'icon-' + weather.code;
 	  var currentLocationIconCodeDay1 = 'icon-' + weather.forecast[0].code;
 	  var currentLocationIconCodeDay2 = 'icon-' + weather.forecast[1].code;
 	  var currentLocationIconCodeDay3 = 'icon-' + weather.forecast[2].code;
@@ -115,11 +126,11 @@ var getWeather = function(location) {
 	  var currentLocationIconCodeDay5 = 'icon-' + weather.forecast[4].code;
       
 		$('#currentLocation i:nth-child(1)').attr('class', currentLocationIconCode );
-		$('#currentLocation .day1 i').attr('class', currentLocationIconCodeDay1 );
-		$('#currentLocation .day2 i').attr('class', currentLocationIconCodeDay2 );
-		$('#currentLocation .day3 i').attr('class', currentLocationIconCodeDay3 );
-		$('#currentLocation .day4 i').attr('class', currentLocationIconCodeDay4 );
-		$('#currentLocation .day5 i').attr('class', currentLocationIconCodeDay5 );
+		$('#currentLocation .day1 i').attr('class', currentLocationIconCodeDay1);
+		$('#currentLocation .day2 i').attr('class', currentLocationIconCodeDay2);
+		$('#currentLocation .day3 i').attr('class', currentLocationIconCodeDay3);
+		$('#currentLocation .day4 i').attr('class', currentLocationIconCodeDay4);
+		$('#currentLocation .day5 i').attr('class', currentLocationIconCodeDay5);
 	
 		if (weather.code >= 0 && weather.code <= 8) {
           $('#currentLocation').addClass('bad');
@@ -195,19 +206,19 @@ $.simpleWeather({
     $('#moses figure:nth-child(5) img').attr('src', weather.forecast[4].image);
 
 		// Change Icon w/ Condition code
-      var iconCode = 'icon-' + weather.code;
-	  var iconCodeDay1 = 'icon-' + weather.forecast[0].code;
-	  var iconCodeDay2 = 'icon-' + weather.forecast[1].code;
-	  var iconCodeDay3 = 'icon-' + weather.forecast[2].code;
-	  var iconCodeDay4 = 'icon-' + weather.forecast[3].code;
-	  var iconCodeDay5 = 'icon-' + weather.forecast[4].code;
+      var mosesIconCode = 'icon-' + weather.code;
+	  var mosesIconCodeDay1 = 'icon-' + weather.forecast[0].code;
+	  var mosesIconCodeDay2 = 'icon-' + weather.forecast[1].code;
+	  var mosesIconCodeDay3 = 'icon-' + weather.forecast[2].code;
+	  var mosesIconCodeDay4 = 'icon-' + weather.forecast[3].code;
+	  var mosesIconCodeDay5 = 'icon-' + weather.forecast[4].code;
       
-		$('#moses i:nth-child(1)').attr('class', iconCode );
-		$('#moses .day1 i').attr('class', iconCodeDay1 );
-		$('#moses .day2 i').attr('class', iconCodeDay2 );
-		$('#moses .day3 i').attr('class', iconCodeDay3 );
-		$('#moses .day4 i').attr('class', iconCodeDay4 );
-		$('#moses .day5 i').attr('class', iconCodeDay5 );
+		$('#moses i:nth-child(1)').attr('class', mosesIconCode );
+		$('#moses .day1 i').attr('class', mosesIconCodeDay1);
+		$('#moses .day2 i').attr('class', mosesIconCodeDay2);
+		$('#moses .day3 i').attr('class', mosesIconCodeDay3);
+		$('#moses .day4 i').attr('class', mosesIconCodeDay4);
+		$('#moses .day5 i').attr('class', mosesIconCodeDay5);
 	
 		if (weather.code >= 0 && weather.code <= 8) {
           $('#moses').addClass('bad');
@@ -282,19 +293,19 @@ $.simpleWeather({
     $('#cheney figure:nth-child(5) img').attr('src', weather.forecast[4].image);
 
 		// Change Icon w/ Condition code
-      var seattleIconCode = 'icon-' + weather.code;
-	  var seattleIconCodeDay1 = 'icon-' + weather.forecast[0].code;
-	  var seattleIconCodeDay2 = 'icon-' + weather.forecast[1].code;
-	  var seattleIconCodeDay3 = 'icon-' + weather.forecast[2].code;
-	  var seattleIconCodeDay4 = 'icon-' + weather.forecast[3].code;
-	  var seattleIconCodeDay5 = 'icon-' + weather.forecast[4].code;
+      var cheneyIconCode = 'icon-' + weather.code;
+	  var cheneyIconCodeDay1 = 'icon-' + weather.forecast[0].code;
+	  var cheneyIconCodeDay2 = 'icon-' + weather.forecast[1].code;
+	  var cheneyIconCodeDay3 = 'icon-' + weather.forecast[2].code;
+	  var cheneyIconCodeDay4 = 'icon-' + weather.forecast[3].code;
+	  var cheneyIconCodeDay5 = 'icon-' + weather.forecast[4].code;
       
-		$('#cheney i:nth-child(1)').attr('class', seattleIconCode );
-		$('#cheney .day1 i').attr('class', seattleIconCodeDay1 );
-		$('#cheney .day2 i').attr('class', seattleIconCodeDay2 );
-		$('#cheney .day3 i').attr('class', seattleIconCodeDay3 );
-		$('#cheney .day4 i').attr('class', seattleIconCodeDay4 );
-		$('#cheney .day5 i').attr('class', seattleIconCodeDay5 );
+		$('#cheney i:nth-child(1)').attr('class', cheneyIconCode );
+		$('#cheney .day1 i').attr('class', cheneyIconCodeDay1);
+		$('#cheney .day2 i').attr('class', cheneyIconCodeDay2);
+		$('#cheney .day3 i').attr('class', cheneyIconCodeDay3);
+		$('#cheney .day4 i').attr('class', cheneyIconCodeDay4);
+		$('#cheney .day5 i').attr('class', cheneyIconCodeDay5);
 		
 		if (weather.code >= 0 && weather.code <= 8) {
           $('#cheney').addClass('bad');
@@ -367,19 +378,19 @@ $.simpleWeather({
     $('#spokane figure:nth-child(5) img').attr('src', weather.forecast[4].image);
 
 		// Change Icon w/ Condition code
-      var portlandIconCode = 'icon-' + weather.code;
-	  var portlandIconCodeDay1 = 'icon-' + weather.forecast[0].code;
-	  var portlandIconCodeDay2 = 'icon-' + weather.forecast[1].code;
-	  var portlandIconCodeDay3 = 'icon-' + weather.forecast[2].code;
-	  var portlandIconCodeDay4 = 'icon-' + weather.forecast[3].code;
-	  var portlandIconCodeDay5 = 'icon-' + weather.forecast[4].code;
+      var spokaneIconCode = 'icon-' + weather.code;
+	  var spokaneIconCodeDay1 = 'icon-' + weather.forecast[0].code;
+	  var spokaneIconCodeDay2 = 'icon-' + weather.forecast[1].code;
+	  var spokaneIconCodeDay3 = 'icon-' + weather.forecast[2].code;
+	  var spokaneIconCodeDay4 = 'icon-' + weather.forecast[3].code;
+	  var spokaneIconCodeDay5 = 'icon-' + weather.forecast[4].code;
       
-		$('#spokane i:nth-child(1)').attr('class', portlandIconCode );
-		$('#spokane .day1 i').attr('class', portlandIconCodeDay1 );
-		$('#spokane .day2 i').attr('class', portlandIconCodeDay2 );
-		$('#spokane .day3 i').attr('class', portlandIconCodeDay3 );
-		$('#spokane .day4 i').attr('class', portlandIconCodeDay4 );
-		$('#spokane .day5 i').attr('class', portlandIconCodeDay5 );
+		$('#spokane i:nth-child(1)').attr('class', spokaneIconCode );
+		$('#spokane .day1 i').attr('class', spokaneIconCodeDay1);
+		$('#spokane .day2 i').attr('class', spokaneIconCodeDay2);
+		$('#spokane .day3 i').attr('class', spokaneIconCodeDay3);
+		$('#spokane .day4 i').attr('class', spokaneIconCodeDay4);
+		$('#spokane .day5 i').attr('class', spokaneIconCodeDay5);
 		
 		if (weather.code >= 0 && weather.code <= 8) {
           $('#spokane').addClass('bad');
