@@ -1,21 +1,183 @@
-/********************
-YOUR STYLES
-*******************/
 body {
-    background: #c1c1c1;
+	font-family: 'Julius Sans One', sans-serif;
+	color: #b39eb5;
+    text-shadow: 0px 3px 3px gray
 }
 
-.city {
-  color: red;
+/* Menu Button */
+
+#sidr-show-hide {
+  position: absolute;
+  z-index: 1000;
+  left: .5em;
+  top: .5em;
+  color: white;
+  font-size: 3em;
+  padding-top: 40px;
 }
 
-.state {
-  color: green;
+#close { 
+	float: right;
+	font-size: 2em;
+	margin: 1em;
+	padding: 0px 6px;
+	border: solid white;
+	border-radius: 100px;
+}
+
+.close { 
+	font-size: 2em;
+	margin: 1em;
+	padding: 0px 6px;
+}
+
+/* Sidebar */
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+li a {
+	width: 100%;
+	padding: .5em .5em .5em 0;
+}
+
+li a:active  {
+	background: white;
+	color: black;
+}
+
+.places {
+  list-style-type: none;
+	margin: 0 0 0 2em;
+	padding: 0;
+	
+}
+li {
+	width: 100%;
+	padding: .5em 0;
+}
+li:nth-child(1) {
+	margin: 2em 2em 2em 0;
+}
+
+}
+li:nth-child(2) {
+	margin-bottom: 4em;
+}
+
+section {
+  min-height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* Sidebar */
+
+.sidr {
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 999999;
+    width: 16em;
+    overflow-x: hidden;
+    overflow-y: auto;
+	background: #b39eb5;
+	box-shadow: inset -20px -30px 100px -20px black;
+    }
+
+.left {
+        left: -16em;
+        right: auto;
+}
+
+/* Section */
+
+.info {
+	margin: 11em 0 0 0;   
+}
+
+h3, h1 {
+	text-align: center;
+	padding: 20px 0;
+	margin: 0 32px 0 0;
+    font-size: 2.5em;
 }
 
 .temp {
-   color: blue;
+	font-size: 5em;
+	line-height: 1;
+    color: white;
 }
+#city {
+	padding-bottom: 0;
+    font-size: 2em;
+}
+.today {
+	border: none;
+	padding-top: 0;
+    font-size: 1.5em;
+}
+
+section i:first-child {
+    font-family: weather;
+    text-align: center;
+    font-size: 15em;
+    line-height: 1;
+    color: white; 
+}
+
+/*-----forecast------*/
+i {
+  font-family: weather;
+  font-size:3em;
+  line-height: 1;
+  text-transform: none;
+	color: white;
+	margin-top: 4px;
+}
+
+figure {
+	display: flex;
+	flex-direction: column;
+}
+
+.forecast {
+	text-align: center;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+/* Button */
+.geo {
+  position: center;
+  background: #b39eb5;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+	font-family: 'Julius Sans One', sans-serif;
+    color: white;
+}
+
+/* Chaning Backgrounds*/
+.sad {
+background: url("http://orig15.deviantart.net/1ac1/f/2012/246/3/8/cloudy_sky__2_by_horses1999_stock-d5dg0yw.jpg");  
+}  
+
+.happy {
+background: url("http://www.clipartkid.com/images/166/with-a-chance-of-progress-autism-s-moments-of-clear-blue-sky-TIamvC-clipart.jpg"); 
+}
+
+.wet {
+background: url("http://wallpapercave.com/wp/8SxrVjw.jpg");  
+}
+
+.bad {
+background: url("http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/stormy_07_23/s18_24342791.jpg");  
+}
+
 
 
 
@@ -25,32 +187,20 @@ MEDIA QUERIES
 /* Mobile: 320px = 20em */
 @media screen and (min-width: 20em) { 
 
-  /* Diagnostic Styling. Delete When Done. */
-  body:before {
-       background: yellow;
-       content: "Mobile Size";
-  }
+ 
   
 }
 
 /* Tablet:  768px = 160em */
 @media screen and (min-width: 48em)  {
 
-  /* Diagnostic Styling. Delete When Done. */
-  body:before {
-       background: yellow;
-       content: "Tablet Size";
-  }
+ 
 
 }
 
 /* Desktop: 1280px = 80em */
 @media screen and (min-width: 80em) { 
   
-  /* Diagnostic Styling. Delete When Done. */
-  body:before {
-       background: yellow;
-       content: "Desktop Size";
-  }
+
 
 }
